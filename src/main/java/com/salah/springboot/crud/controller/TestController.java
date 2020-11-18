@@ -13,8 +13,9 @@ public class TestController {
     @Autowired
     private TestPropConfig testPropConfig;
 
-    @GetMapping({"/", ""})
-    StringBuilder test() {
+
+    @GetMapping({"/prop", ""})
+    public StringBuilder test() {
         StringBuilder stringBuilder = new StringBuilder(testPropConfig.getAProp()).append(" | ");
         stringBuilder.append(testPropConfig.getNum()).append(" | ");
         testPropConfig.getListProp().forEach(i -> stringBuilder.append(i).append(" | "));
@@ -22,7 +23,7 @@ public class TestController {
     }
 
     @GetMapping("/can")
-    String canIChangeProps(){
+    public String canIChangeProps() {
         return testPropConfig.getAProp();
     }
 }
