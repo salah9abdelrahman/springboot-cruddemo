@@ -18,4 +18,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     @RestResource(path = "nameStartsWith", rel = "nameStartsWith")
     public List<Employee> findByFirstNameStartingWith(@Valid @Param("name") String name);
 
+    public List<Employee> findAllByOrderByLastNameAsc();
+
 }

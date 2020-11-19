@@ -38,9 +38,6 @@ public class EmployeeRepoAdvice {
     @AfterReturning(pointcut ="servicesPointCut() || daosPointCut() ||  controllersPointCut()", returning = "result")
     private void afterPackages(JoinPoint joinPoint, Object result) {
         log.info("@After Method: " + joinPoint.getSignature().toString());
-        StringBuilder stringBuilder = new StringBuilder("Args: ");
-        Stream.of(joinPoint.getArgs()).forEach(stringBuilder::append);
-        log.info(stringBuilder.toString());
         log.info("result: " + result);
     }
 
