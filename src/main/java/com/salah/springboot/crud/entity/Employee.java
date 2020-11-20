@@ -29,11 +29,13 @@ public class Employee {
     private String firstName;
 
     @NotNull
+    @NotEmpty
     @Column(name = "last_name")
     private String lastName;
 
     @NotNull
     @Email
+    @NotEmpty
     @Column(name = "email")
     private String email;
 }
